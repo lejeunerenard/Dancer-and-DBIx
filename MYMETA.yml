@@ -18,6 +18,8 @@ no_index:
     - t
     - inc
 requires:
+  Class::Method::Modifiers: 2.01
+  DBIx::Class::Schema::Loader: 0
   Dancer: 1.311
   Dancer::Plugin::DBIC: 0
   Test::More: 0

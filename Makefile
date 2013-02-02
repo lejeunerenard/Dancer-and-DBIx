@@ -18,7 +18,7 @@
 #     LICENSE => q[perl]
 #     NAME => q[bookstore]
 #     PL_FILES => {  }
-#     PREREQ_PM => { Test::More=>q[0], YAML=>q[0], Dancer=>q[1.311], Dancer::Plugin::DBIC=>q[0] }
+#     PREREQ_PM => { Test::More=>q[0], YAML=>q[0], Dancer=>q[1.311], Dancer::Plugin::DBIC=>q[0], DBIx::Class::Schema::Loader=>q[0], Class::Method::Modifiers=>q[2.01] }
 #     TEST_REQUIRES => {  }
 #     VERSION_FROM => q[lib/bookstore.pm]
 #     clean => { FILES=>q[bookstore-*] }
@@ -185,10 +185,13 @@ PERL_ARCHIVE       =
 PERL_ARCHIVE_AFTER = 
 
 
-TO_INST_PM = lib/bookstore.pm
+TO_INST_PM = lib/bookstore.pm \
+	populate_database.pl
 
 PM_TO_BLIB = lib/bookstore.pm \
-	blib/lib/bookstore.pm
+	blib/lib/bookstore.pm \
+	populate_database.pl \
+	$(INST_LIB)/populate_database.pl
 
 
 # --- MakeMaker platform_constants section:
@@ -496,6 +499,8 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '    - t' >> META_new.yml
 	$(NOECHO) $(ECHO) '    - inc' >> META_new.yml
 	$(NOECHO) $(ECHO) 'requires:' >> META_new.yml
+	$(NOECHO) $(ECHO) '  Class::Method::Modifiers: 2.01' >> META_new.yml
+	$(NOECHO) $(ECHO) '  DBIx::Class::Schema::Loader: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Dancer: 1.311' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Dancer::Plugin::DBIC: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Test::More: 0' >> META_new.yml
@@ -537,6 +542,8 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '      },' >> META_new.json
 	$(NOECHO) $(ECHO) '      "runtime" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '         "requires" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '            "Class::Method::Modifiers" : "2.01",' >> META_new.json
+	$(NOECHO) $(ECHO) '            "DBIx::Class::Schema::Loader" : 0,' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Dancer" : "1.311",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Dancer::Plugin::DBIC" : 0,' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Test::More" : 0,' >> META_new.json
@@ -845,6 +852,8 @@ ppd :
 	$(NOECHO) $(ECHO) '    <ABSTRACT>YOUR APPLICATION ABSTRACT</ABSTRACT>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <AUTHOR>YOUR NAME &lt;youremail@example.com&gt;</AUTHOR>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Class::Method::Modifiers" VERSION="2.01" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="DBIx::Class::Schema::Loader" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Dancer::" VERSION="1.311" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Dancer::Plugin::DBIC" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Test::More" />' >> $(DISTNAME).ppd
@@ -859,7 +868,8 @@ ppd :
 
 pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
-	  lib/bookstore.pm blib/lib/bookstore.pm 
+	  lib/bookstore.pm blib/lib/bookstore.pm \
+	  populate_database.pl $(INST_LIB)/populate_database.pl 
 	$(NOECHO) $(TOUCH) pm_to_blib
 
 
