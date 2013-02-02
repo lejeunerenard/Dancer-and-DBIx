@@ -18,7 +18,7 @@
 #     LICENSE => q[perl]
 #     NAME => q[bookstore]
 #     PL_FILES => {  }
-#     PREREQ_PM => { Test::More=>q[0], YAML=>q[0], Dancer=>q[1.311] }
+#     PREREQ_PM => { Test::More=>q[0], YAML=>q[0], Dancer=>q[1.311], Dancer::Plugin::DBIC=>q[0] }
 #     TEST_REQUIRES => {  }
 #     VERSION_FROM => q[lib/bookstore.pm]
 #     clean => { FILES=>q[bookstore-*] }
@@ -138,7 +138,7 @@ PERM_DIR = 755
 PERM_RW = 644
 PERM_RWX = 755
 
-MAKEMAKER   = /usr/share/perl/5.14/ExtUtils/MakeMaker.pm
+MAKEMAKER   = /home/seanz/Programming/dancer/bookstore/local/lib/perl5/ExtUtils/MakeMaker.pm
 MM_VERSION  = 6.64
 MM_REVISION = 66400
 
@@ -497,6 +497,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '    - inc' >> META_new.yml
 	$(NOECHO) $(ECHO) 'requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Dancer: 1.311' >> META_new.yml
+	$(NOECHO) $(ECHO) '  Dancer::Plugin::DBIC: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Test::More: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  YAML: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) 'version: 0.1' >> META_new.yml
@@ -537,6 +538,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '      "runtime" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '         "requires" : {' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Dancer" : "1.311",' >> META_new.json
+	$(NOECHO) $(ECHO) '            "Dancer::Plugin::DBIC" : 0,' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Test::More" : 0,' >> META_new.json
 	$(NOECHO) $(ECHO) '            "YAML" : 0' >> META_new.json
 	$(NOECHO) $(ECHO) '         }' >> META_new.json
@@ -844,6 +846,7 @@ ppd :
 	$(NOECHO) $(ECHO) '    <AUTHOR>YOUR NAME &lt;youremail@example.com&gt;</AUTHOR>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Dancer::" VERSION="1.311" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Dancer::Plugin::DBIC" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Test::More" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="YAML::" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="x86_64-linux-gnu-thread-multi-5.14" />' >> $(DISTNAME).ppd

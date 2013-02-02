@@ -33,6 +33,7 @@
       "runtime" : {
          "requires" : {
             "Dancer" : "1.311",
+            "Dancer::Plugin::DBIC" : 0,
             "Test::More" : 0,
             "YAML" : 0
          }
