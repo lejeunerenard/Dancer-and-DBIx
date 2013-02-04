@@ -55,6 +55,73 @@
          "target" : "Algorithm::C3",
          "version" : "0.08"
       },
+      "AppConfig" : {
+         "dist" : "AppConfig-1.66",
+         "mymeta" : {
+            "abstract" : "AppConfig is a bundle of Perl5 modules for reading configuration files and parsing command line arguments.",
+            "author" : [
+               "Andy Wardley <abw@wardley.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.31, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "AppConfig",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Test::More" : 0
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "1.66"
+         },
+         "name" : "AppConfig",
+         "pathname" : "A/AB/ABW/AppConfig-1.66.tar.gz",
+         "provides" : {
+            "AppConfig" : {
+               "file" : "AppConfig.pm",
+               "version" : "1.66"
+            },
+            "AppConfig::Args" : {
+               "file" : "AppConfig/Args.pm",
+               "version" : "1.65"
+            },
+            "AppConfig::CGI" : {
+               "file" : "AppConfig/CGI.pm",
+               "version" : "1.65"
+            },
+            "AppConfig::File" : {
+               "file" : "AppConfig/File.pm",
+               "version" : "1.65"
+            },
+            "AppConfig::Getopt" : {
+               "file" : "AppConfig/Getopt.pm",
+               "version" : "1.65"
+            },
+            "AppConfig::State" : {
+               "file" : "AppConfig/State.pm",
+               "version" : "1.65"
+            },
+            "AppConfig::Sys" : {
+               "file" : "AppConfig/Sys.pm",
+               "version" : "1.65"
+            }
+         },
+         "target" : "AppConfig",
+         "version" : "1.66"
+      },
       "B::Hooks::EndOfScope" : {
          "dist" : "B-Hooks-EndOfScope-0.12",
          "mymeta" : {
@@ -9065,6 +9132,255 @@
          },
          "target" : "Task::Weaken",
          "version" : "1.04"
+      },
+      "Template" : {
+         "dist" : "Template-Toolkit-2.24",
+         "mymeta" : {
+            "abstract" : "comprehensive template processing system",
+            "author" : [
+               "Andy Wardley <abw@wardley.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112150, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Template-Toolkit",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "AppConfig" : "1.56",
+                     "File::Spec" : "0.8",
+                     "File::Temp" : "0.12",
+                     "Scalar::Util" : 0
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "2.24"
+         },
+         "name" : "Template",
+         "pathname" : "A/AB/ABW/Template-Toolkit-2.24.tar.gz",
+         "provides" : {
+            "Template" : {
+               "file" : "Template.pm",
+               "version" : "2.24"
+            },
+            "Template::Base" : {
+               "file" : "Template/Base.pm",
+               "version" : "2.78"
+            },
+            "Template::Config" : {
+               "file" : "Template/Config.pm",
+               "version" : "2.75"
+            },
+            "Template::Constants" : {
+               "file" : "Template/Constants.pm",
+               "version" : "2.75"
+            },
+            "Template::Context" : {
+               "file" : "Template/Context.pm",
+               "version" : "2.98"
+            },
+            "Template::Directive" : {
+               "file" : "Template/Directive.pm",
+               "version" : "2.2"
+            },
+            "Template::Document" : {
+               "file" : "Template/Document.pm",
+               "version" : "2.79"
+            },
+            "Template::Exception" : {
+               "file" : "Template/Exception.pm",
+               "version" : "2.7"
+            },
+            "Template::Filters" : {
+               "file" : "Template/Filters.pm",
+               "version" : "2.87"
+            },
+            "Template::Grammar" : {
+               "file" : "Template/Grammar.pm",
+               "version" : "2.25"
+            },
+            "Template::Iterator" : {
+               "file" : "Template/Iterator.pm",
+               "version" : "2.68"
+            },
+            "Template::Monad::Assert" : {
+               "file" : "Template/Plugin/Assert.pm"
+            },
+            "Template::Monad::Scalar" : {
+               "file" : "Template/Plugin/Scalar.pm"
+            },
+            "Template::Namespace::Constants" : {
+               "file" : "Template/Namespace/Constants.pm",
+               "version" : "1.27"
+            },
+            "Template::Parser" : {
+               "file" : "Template/Parser.pm",
+               "version" : "2.89"
+            },
+            "Template::Perl" : {
+               "file" : "Template/Filters.pm"
+            },
+            "Template::Plugin" : {
+               "file" : "Template/Plugin.pm",
+               "version" : "2.7"
+            },
+            "Template::Plugin::Assert" : {
+               "file" : "Template/Plugin/Assert.pm",
+               "version" : "1"
+            },
+            "Template::Plugin::CGI" : {
+               "file" : "Template/Plugin/CGI.pm",
+               "version" : "2.7"
+            },
+            "Template::Plugin::Datafile" : {
+               "file" : "Template/Plugin/Datafile.pm",
+               "version" : "2.72"
+            },
+            "Template::Plugin::Date" : {
+               "file" : "Template/Plugin/Date.pm",
+               "version" : "2.78"
+            },
+            "Template::Plugin::Date::Calc" : {
+               "file" : "Template/Plugin/Date.pm"
+            },
+            "Template::Plugin::Date::Manip" : {
+               "file" : "Template/Plugin/Date.pm"
+            },
+            "Template::Plugin::Directory" : {
+               "file" : "Template/Plugin/Directory.pm",
+               "version" : "2.7"
+            },
+            "Template::Plugin::Dumper" : {
+               "file" : "Template/Plugin/Dumper.pm",
+               "version" : "2.7"
+            },
+            "Template::Plugin::File" : {
+               "file" : "Template/Plugin/File.pm",
+               "version" : "2.71"
+            },
+            "Template::Plugin::Filter" : {
+               "file" : "Template/Plugin/Filter.pm",
+               "version" : "1.38"
+            },
+            "Template::Plugin::Format" : {
+               "file" : "Template/Plugin/Format.pm",
+               "version" : "2.7"
+            },
+            "Template::Plugin::HTML" : {
+               "file" : "Template/Plugin/HTML.pm",
+               "version" : "2.62"
+            },
+            "Template::Plugin::Image" : {
+               "file" : "Template/Plugin/Image.pm",
+               "version" : "1.21"
+            },
+            "Template::Plugin::Iterator" : {
+               "file" : "Template/Plugin/Iterator.pm",
+               "version" : "2.68"
+            },
+            "Template::Plugin::Math" : {
+               "file" : "Template/Plugin/Math.pm",
+               "version" : "1.16"
+            },
+            "Template::Plugin::Pod" : {
+               "file" : "Template/Plugin/Pod.pm",
+               "version" : "2.69"
+            },
+            "Template::Plugin::Procedural" : {
+               "file" : "Template/Plugin/Procedural.pm",
+               "version" : "1.17"
+            },
+            "Template::Plugin::Scalar" : {
+               "file" : "Template/Plugin/Scalar.pm",
+               "version" : "1"
+            },
+            "Template::Plugin::String" : {
+               "file" : "Template/Plugin/String.pm",
+               "version" : "2.4"
+            },
+            "Template::Plugin::Table" : {
+               "file" : "Template/Plugin/Table.pm",
+               "version" : "2.71"
+            },
+            "Template::Plugin::URL" : {
+               "file" : "Template/Plugin/URL.pm",
+               "version" : "2.74"
+            },
+            "Template::Plugin::View" : {
+               "file" : "Template/Plugin/View.pm",
+               "version" : "2.68"
+            },
+            "Template::Plugin::Wrap" : {
+               "file" : "Template/Plugin/Wrap.pm",
+               "version" : "2.68"
+            },
+            "Template::Plugins" : {
+               "file" : "Template/Plugins.pm",
+               "version" : "2.77"
+            },
+            "Template::Provider" : {
+               "file" : "Template/Provider.pm",
+               "version" : "2.94"
+            },
+            "Template::Service" : {
+               "file" : "Template/Service.pm",
+               "version" : "2.8"
+            },
+            "Template::Stash" : {
+               "file" : "Template/Stash.pm",
+               "version" : "2.91"
+            },
+            "Template::Stash::Context" : {
+               "file" : "Template/Stash/Context.pm",
+               "version" : "1.63"
+            },
+            "Template::Stash::XS" : {
+               "file" : "Template/Stash/XS.pm"
+            },
+            "Template::Test" : {
+               "file" : "Template/Test.pm",
+               "version" : "2.75"
+            },
+            "Template::TieString" : {
+               "file" : "Template/Config.pm"
+            },
+            "Template::VMethods" : {
+               "file" : "Template/VMethods.pm",
+               "version" : "2.16"
+            },
+            "Template::View" : {
+               "file" : "Template/View.pm",
+               "version" : "2.91"
+            },
+            "bytes" : {
+               "file" : "Template/Provider.pm"
+            }
+         },
+         "target" : "Template",
+         "version" : "2.24"
       },
       "Test::Deep" : {
          "dist" : "Test-Deep-0.110",

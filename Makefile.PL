@@ -15,6 +15,7 @@ WriteMakefile(
         'Test::More' => 0,
         'YAML'       => 0,
         'Dancer'     => 1.311,
+				'Template'	 => 0,
 				'Class::Method::Modifiers' => 2.01,
 				'Dancer::Plugin::DBIC'	=> 0,
 				'DBIx::Class::Schema::Loader' => 0,
