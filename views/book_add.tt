@@ -1,0 +1,36 @@
+<form action="/books" method="">
+   <input type="hidden" name="id" value="" />
+   <p>
+      <label for="title">Title</label>
+      <input type="text" name="title" value="" />
+   </p>
+   <p>
+      <label for="Author">Author</label>
+      <select name="author">
+         <option value="">Select one...</option>
+         <% IF authors.size %>
+            <% FOREACH author IN authors %>
+         <option value="<% author.id %>"><% author.firstname %><% IF author.lastname %> <% author.lastname %><% END %></option>
+            <% END %>
+         <% END %>
+      </select>
+   </p>
+   <p>
+      <input type="submit" value="<% IF book.id %>Update<% ELSE %>Save<% END %>" />
+   </p>
+</form>
+<script type="text/javascript">
+   $(function() {
+      $('form').submit(function(e) {
+         $.ajax({
+            url: '/books',
+            type: "<% IF book.id %>PUT<% ELSE %>POST<% END %>",
+            data: $(this).serialize(),
+            success: function(results) {
+               console.log(results);
+            }
+         });
+         return false;
+      });
+   });
+</script>

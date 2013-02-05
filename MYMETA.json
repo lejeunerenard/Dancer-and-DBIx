@@ -4,7 +4,7 @@
       "YOUR NAME <youremail@example.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.112621",
+   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -22,23 +22,24 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : 0
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : 0
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "runtime" : {
          "requires" : {
             "Class::Method::Modifiers" : "2.01",
-            "DBIx::Class::Schema::Loader" : 0,
+            "DBIx::Class::Schema::Loader" : "0",
             "Dancer" : "1.311",
-            "Dancer::Plugin::DBIC" : 0,
-            "Template" : 0,
-            "Test::More" : 0,
-            "YAML" : 0
+            "Dancer::Plugin::DBIC" : "0",
+            "HTML::FillInForm" : "0",
+            "Template" : "0",
+            "Test::More" : "0",
+            "YAML" : "0"
          }
       }
    },

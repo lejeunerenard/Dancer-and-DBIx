@@ -29,5 +29,5 @@ engines:
 
 plugins:
   DBIC:
-    bookstore:
+    default:
       dsn: "dbi:SQLite:dbname=bookstore.db"

@@ -1,8 +1,19 @@
   <% IF books.size %>
-    <ul>
+    <table>
+      <tr>
+         <th></th>
+         <th>Title</th>
+         <th>Author</th>
+      </tr>
     <% FOREACH book IN books %>
-      <li>Author: <% book.author %>
+      <tr>
+         <td><a href="/books/edit/<% book.id %>">Edit</a></td>
+         <td><% book.title %></td>
+         <td><% book.author.firstname %><% IF book.author.lastname %> <% book.author.lastname %><% END %></td>
+      </tr>
     <% END %>
+    </table>
   <% ELSE %>
-    No result
+    <p>No result</p>
   <% END %>
+   <a href="<% add_book_uri %>">Add a Book</a>
