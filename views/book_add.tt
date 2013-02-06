@@ -17,6 +17,8 @@
    </p>
    <p>
       <input type="submit" value="<% IF book.id %>Update<% ELSE %>Save<% END %>" />
+      <% IF book.id %><a href="/books/delete/<% book.id %>">Delete</a><% END %>
+      <a href="<% list_books_uri %>">Back to List</a>
    </p>
 </form>
 <script type="text/javascript">

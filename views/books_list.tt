@@ -7,7 +7,7 @@
       </tr>
     <% FOREACH book IN books %>
       <tr>
-         <td><a href="/books/edit/<% book.id %>">Edit</a></td>
+         <td><a href="/books/<% book.id %>">View</a> <a href="/books/edit/<% book.id %>">Edit</a></td>
          <td><% book.title %></td>
          <td><% book.author.firstname %><% IF book.author.lastname %> <% book.author.lastname %><% END %></td>
       </tr>

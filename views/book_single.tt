@@ -1,0 +1,9 @@
+   <p>
+      <label for="title">Title:</label>
+      <% book.title %>
+   </p>
+   <p>
+      <label for="Author">Author:</label>
+      <% book.author.firstname %><% IF book.author.lastname %> <% book.author.lastname %><% END %>
+   </p>
+   <a href="<% list_books_uri %>">Back to List</a>

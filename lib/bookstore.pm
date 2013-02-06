@@ -25,22 +25,41 @@ get '/' => sub {
 # ==== Book CRUD =====
 
 # Read
-get '/books/?' => sub {
-	$tmpl_params{books} = \@{[resultset('Book')->all]};   # \@{[ ]} will force a list context
-	template 'books_list', \%tmpl_params;
+get '/books/?:id?' => sub {
+   if ( param 'id' ) {
+      $tmpl_params{book} = resultset('Book')->find(param 'id');   # \@{[ ]} will force a list context
+      template 'book_single', \%tmpl_params;
+   } else {
+      $tmpl_params{books} = \@{[resultset('Book')->all]};   # \@{[ ]} will force a list context
+      template 'books_list', \%tmpl_params;
+   }
 };
 
 # Create and Update
 any ['post', 'put'] => '/books' => sub {
    my %params = params;
-   if (not $params{author}) { delete $params{'author'} }
+   #if (not $params{author}) { delete $params{'author'} }
+   my $msg = validate_books( \%params );
+   if ($msg->{errors}) {
+      set serializer => 'JSON';
+      return $msg;
+   }
    if ( request->method() eq "POST" ) {
       #delete $params{'id'};
-      resultset('Book')->create(\%params);
+      resultset('Book')->create($msg);
    } else {
-      resultset('Book')->find(param 'id')->update(\%params);
+      resultset('Book')->find(param 'id')->update($msg);
    }
 	template 'book_add', \%tmpl_params;
+};
+# Delete
+get '/books/delete/:id' => sub {
+   resultset('Book')->find(param 'id')->delete();
+   redirect '/books/';
+};
+del '/books/:id' => sub {
+   resultset('Book')->find(param 'id')->delete();
+   redirect '/books/';
 };
 
 # ---- Book Views -----
