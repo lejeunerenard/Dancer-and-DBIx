@@ -20,6 +20,7 @@ WriteMakefile(
         'Dancer::Plugin::DBIC'	=> 0,
         'DBIx::Class::Schema::Loader' => 0,
         'HTML::FillInForm' => 0,
+        'Module::Refresh'   => 0, # For development.
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'bookstore-*' },

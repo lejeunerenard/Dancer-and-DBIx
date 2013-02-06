@@ -8166,6 +8166,118 @@
          "target" : "Module::Metadata",
          "version" : "1.000011"
       },
+      "Module::Refresh" : {
+         "dist" : "Module-Refresh-0.17",
+         "mymeta" : {
+            "abstract" : "Refresh %INC files when updated on disk",
+            "author" : [
+               "Jesse Vincent <jesse@bestpractical.com>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 1.01, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Module-Refresh",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42",
+                     "File::Temp" : "0.19",
+                     "Path::Class" : 0,
+                     "Test::More" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.42"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {}
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ]
+            },
+            "version" : "0.17"
+         },
+         "name" : "Module::Refresh",
+         "pathname" : "A/AL/ALEXMV/Module-Refresh-0.17.tar.gz",
+         "provides" : {
+            "Module::Refresh" : {
+               "file" : "Module/Refresh.pm",
+               "version" : "0.17"
+            }
+         },
+         "target" : "Module::Refresh",
+         "version" : "0.17"
+      },
+      "Module::Reload" : {
+         "dist" : "Module-Reload-1.07",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "unknown"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Module-Reload",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {}
+               }
+            },
+            "release_status" : "stable",
+            "version" : "1.07"
+         },
+         "name" : "Module::Reload",
+         "pathname" : "J/JP/JPRIT/Module-Reload-1.07.tar.gz",
+         "provides" : {
+            "Module::Reload" : {
+               "file" : "Module/Reload.pm",
+               "version" : "1.07"
+            }
+         },
+         "target" : "Module::Reload",
+         "version" : "1.07"
+      },
       "Module::Runtime" : {
          "dist" : "Module-Runtime-0.013",
          "mymeta" : {

@@ -18,7 +18,7 @@
 #     LICENSE => q[perl]
 #     NAME => q[bookstore]
 #     PL_FILES => {  }
-#     PREREQ_PM => { Test::More=>q[0], YAML=>q[0], HTML::FillInForm=>q[0], Dancer=>q[1.311], Template=>q[0], Dancer::Plugin::DBIC=>q[0], DBIx::Class::Schema::Loader=>q[0], Class::Method::Modifiers=>q[2.01] }
+#     PREREQ_PM => { YAML=>q[0], Module::Refresh=>q[0], Template=>q[0], Class::Method::Modifiers=>q[2.01], Test::More=>q[0], HTML::FillInForm=>q[0], Dancer=>q[1.311], Dancer::Plugin::DBIC=>q[0], DBIx::Class::Schema::Loader=>q[0] }
 #     TEST_REQUIRES => {  }
 #     VERSION_FROM => q[lib/bookstore.pm]
 #     clean => { FILES=>q[bookstore-*] }
@@ -507,6 +507,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '  Dancer: 1.311' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Dancer::Plugin::DBIC: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  HTML::FillInForm: 0' >> META_new.yml
+	$(NOECHO) $(ECHO) '  Module::Refresh: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Template: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  Test::More: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) '  YAML: 0' >> META_new.yml
@@ -552,6 +553,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '            "Dancer" : "1.311",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Dancer::Plugin::DBIC" : "0",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "HTML::FillInForm" : "0",' >> META_new.json
+	$(NOECHO) $(ECHO) '            "Module::Refresh" : "0",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Template" : "0",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "Test::More" : "0",' >> META_new.json
 	$(NOECHO) $(ECHO) '            "YAML" : "0"' >> META_new.json
@@ -864,6 +866,7 @@ ppd :
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Dancer::" VERSION="1.311" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Dancer::Plugin::DBIC" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="HTML::FillInForm" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Module::Refresh" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Template::" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Test::More" />' >> $(DISTNAME).ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="YAML::" />' >> $(DISTNAME).ppd
