@@ -3763,6 +3763,70 @@
          "target" : "Devel::GlobalDestruction",
          "version" : "0.09"
       },
+      "Digest::HMAC" : {
+         "dist" : "Digest-HMAC-1.03",
+         "mymeta" : {
+            "abstract" : "Keyed-Hashing for Message Authentication",
+            "author" : [
+               "Gisle Aas <gisle@activestate.com>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.57_05, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Digest-HMAC",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Digest::MD5" : "2",
+                     "Digest::SHA" : "1",
+                     "perl" : "5.004"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "1.03"
+         },
+         "name" : "Digest::HMAC",
+         "pathname" : "G/GA/GAAS/Digest-HMAC-1.03.tar.gz",
+         "provides" : {
+            "Digest::HMAC" : {
+               "file" : "Digest/HMAC.pm",
+               "version" : "1.03"
+            },
+            "Digest::HMAC_MD5" : {
+               "file" : "Digest/HMAC_MD5.pm",
+               "version" : "1.01"
+            },
+            "Digest::HMAC_SHA1" : {
+               "file" : "Digest/HMAC_SHA1.pm",
+               "version" : "1.03"
+            }
+         },
+         "target" : "Digest::HMAC_MD5",
+         "version" : "1.03"
+      },
       "Dist::CheckConflicts" : {
          "dist" : "Dist-CheckConflicts-0.02",
          "mymeta" : {
@@ -4022,6 +4086,69 @@
          },
          "target" : "Dist::CheckConflicts",
          "version" : "0.02"
+      },
+      "Email::Valid" : {
+         "dist" : "Email-Valid-0.190",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "unknown"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.120351, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Email-Valid",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Mail::Address" : 0,
+                     "Net::DNS" : 0,
+                     "Scalar::Util" : 0,
+                     "Test::More" : 0,
+                     "perl" : "5.006"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "repository" : {
+                  "url" : "http://github.com/rjbs/email-valid"
+               }
+            },
+            "version" : "0.190"
+         },
+         "name" : "Email::Valid",
+         "pathname" : "R/RJ/RJBS/Email-Valid-0.190.tar.gz",
+         "provides" : {
+            "Email::Valid" : {
+               "file" : "Email/Valid.pm",
+               "version" : "0.190"
+            }
+         },
+         "target" : "Email::Valid",
+         "version" : "0.190"
       },
       "Encode::Locale" : {
          "dist" : "Encode-Locale-1.03",
@@ -4849,6 +4976,52 @@
          },
          "target" : "HTML::Entities",
          "version" : "3.69"
+      },
+      "HTML::TagFilter" : {
+         "dist" : "HTML-TagFilter-1.03",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "unknown"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.30, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "HTML-TagFilter",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "HTML::Parser" : "1",
+                     "URI::Escape" : 0
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "1.03",
+            "x_installdirs" : "site",
+            "x_version_from" : "TagFilter.pm"
+         },
+         "name" : "HTML::TagFilter",
+         "pathname" : "W/WR/WROSS/HTML-TagFilter-1.03.tar.gz",
+         "provides" : {
+            "HTML::TagFilter" : {
+               "file" : "HTML/TagFilter.pm",
+               "version" : "1.03"
+            }
+         },
+         "target" : "HTML::TagFilter",
+         "version" : "1.03"
       },
       "HTML::Tagset" : {
          "dist" : "HTML-Tagset-3.20",
@@ -7293,6 +7466,146 @@
          "target" : "MRO::Compat",
          "version" : "0.12"
       },
+      "Mail" : {
+         "dist" : "MailTools-2.12",
+         "mymeta" : {
+            "abstract" : "Various e-mail related modules",
+            "author" : [
+               "Mark Overmeer <perl@overmeer.net>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "MailTools",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Date::Format" : 0,
+                     "Date::Parse" : 0,
+                     "IO::Handle" : 0,
+                     "Net::Domain" : "1.05",
+                     "Net::SMTP" : "1.03",
+                     "Test::More" : 0
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "2.12"
+         },
+         "name" : "Mail",
+         "pathname" : "M/MA/MARKOV/MailTools-2.12.tar.gz",
+         "provides" : {
+            "Mail" : {},
+            "Mail::Address" : {
+               "file" : "Mail/Address.pm",
+               "version" : "2.12"
+            },
+            "Mail::Cap" : {
+               "file" : "Mail/Cap.pm",
+               "version" : "2.12"
+            },
+            "Mail::Field" : {
+               "file" : "Mail/Field.pm",
+               "version" : "2.12"
+            },
+            "Mail::Field::AddrList" : {
+               "file" : "Mail/Field/AddrList.pm",
+               "version" : "2.12"
+            },
+            "Mail::Field::Date" : {
+               "file" : "Mail/Field/Date.pm",
+               "version" : "2.12"
+            },
+            "Mail::Field::Generic" : {
+               "file" : "Mail/Field/Generic.pm",
+               "version" : "2.12"
+            },
+            "Mail::Filter" : {
+               "file" : "Mail/Filter.pm",
+               "version" : "2.12"
+            },
+            "Mail::Header" : {
+               "file" : "Mail/Header.pm",
+               "version" : "2.12"
+            },
+            "Mail::Internet" : {
+               "file" : "Mail/Internet.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer" : {
+               "file" : "Mail/Mailer.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::qmail" : {
+               "file" : "Mail/Mailer/qmail.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::rfc822" : {
+               "file" : "Mail/Mailer/rfc822.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::sendmail" : {
+               "file" : "Mail/Mailer/sendmail.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::smtp" : {
+               "file" : "Mail/Mailer/smtp.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::smtp::pipe" : {
+               "file" : "Mail/Mailer/smtp.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::smtps" : {
+               "file" : "Mail/Mailer/smtps.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::smtps::pipe" : {
+               "file" : "Mail/Mailer/smtps.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::testfile" : {
+               "file" : "Mail/Mailer/testfile.pm",
+               "version" : "2.12"
+            },
+            "Mail::Mailer::testfile::pipe" : {
+               "file" : "Mail/Mailer/testfile.pm",
+               "version" : "2.12"
+            },
+            "Mail::Send" : {
+               "file" : "Mail/Send.pm",
+               "version" : "2.12"
+            },
+            "Mail::Util" : {
+               "file" : "Mail/Util.pm",
+               "version" : "2.12"
+            }
+         },
+         "target" : "Mail::Address",
+         "version" : "2.12"
+      },
       "Memoize::ExpireLRU" : {
          "dist" : "Memoize-ExpireLRU-0.55",
          "mymeta" : {
@@ -8026,6 +8339,334 @@
          },
          "target" : "Moo",
          "version" : "1.000007"
+      },
+      "Net::DNS" : {
+         "dist" : "Net-DNS-0.72",
+         "mymeta" : {
+            "abstract" : "Perl DNS resolver module",
+            "author" : [
+               "Olaf Kolkman <olaf@net-dns.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.57_05, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Net-DNS",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Digest::HMAC_MD5" : "1",
+                     "Digest::MD5" : "2.12",
+                     "Digest::SHA" : "5.23",
+                     "IO::Socket" : 0,
+                     "MIME::Base64" : "2.11",
+                     "Test::More" : "0.18"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "version" : "0.72"
+         },
+         "name" : "Net::DNS",
+         "pathname" : "N/NL/NLNETLABS/Net-DNS-0.72.tar.gz",
+         "provides" : {
+            "Net::DNS" : {
+               "file" : "Net/DNS.pm",
+               "version" : "0.72"
+            },
+            "Net::DNS::Domain" : {
+               "file" : "Net/DNS/Domain.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::DomainName" : {
+               "file" : "Net/DNS/DomainName.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::DomainName1035" : {
+               "file" : "Net/DNS/DomainName.pm"
+            },
+            "Net::DNS::DomainName2535" : {
+               "file" : "Net/DNS/DomainName.pm"
+            },
+            "Net::DNS::Header" : {
+               "file" : "Net/DNS/Header.pm",
+               "version" : "1086"
+            },
+            "Net::DNS::Mailbox" : {
+               "file" : "Net/DNS/Mailbox.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::Mailbox1035" : {
+               "file" : "Net/DNS/Mailbox.pm"
+            },
+            "Net::DNS::Mailbox2535" : {
+               "file" : "Net/DNS/Mailbox.pm"
+            },
+            "Net::DNS::Nameserver" : {
+               "file" : "Net/DNS/Nameserver.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::Packet" : {
+               "file" : "Net/DNS/Packet.pm",
+               "version" : "1086"
+            },
+            "Net::DNS::Parameters" : {
+               "file" : "Net/DNS/Parameters.pm",
+               "version" : "1074"
+            },
+            "Net::DNS::Question" : {
+               "file" : "Net/DNS/Question.pm",
+               "version" : "1074"
+            },
+            "Net::DNS::RR" : {
+               "file" : "Net/DNS/RR.pm",
+               "version" : "1094"
+            },
+            "Net::DNS::RR::A" : {
+               "file" : "Net/DNS/RR/A.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::AAAA" : {
+               "file" : "Net/DNS/RR/AAAA.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::AFSDB" : {
+               "file" : "Net/DNS/RR/AFSDB.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::APL" : {
+               "file" : "Net/DNS/RR/APL.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::APL::Item" : {
+               "file" : "Net/DNS/RR/APL.pm"
+            },
+            "Net::DNS::RR::CERT" : {
+               "file" : "Net/DNS/RR/CERT.pm",
+               "version" : "1073"
+            },
+            "Net::DNS::RR::CNAME" : {
+               "file" : "Net/DNS/RR/CNAME.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::DHCID" : {
+               "file" : "Net/DNS/RR/DHCID.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::DNAME" : {
+               "file" : "Net/DNS/RR/DNAME.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::EID" : {
+               "file" : "Net/DNS/RR/EID.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::HINFO" : {
+               "file" : "Net/DNS/RR/HINFO.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::HIP" : {
+               "file" : "Net/DNS/RR/HIP.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::IPSECKEY" : {
+               "file" : "Net/DNS/RR/IPSECKEY.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::ISDN" : {
+               "file" : "Net/DNS/RR/ISDN.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::KX" : {
+               "file" : "Net/DNS/RR/KX.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::L32" : {
+               "file" : "Net/DNS/RR/L32.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::L64" : {
+               "file" : "Net/DNS/RR/L64.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::LOC" : {
+               "file" : "Net/DNS/RR/LOC.pm",
+               "version" : "1075"
+            },
+            "Net::DNS::RR::LP" : {
+               "file" : "Net/DNS/RR/LP.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::MB" : {
+               "file" : "Net/DNS/RR/MB.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::MG" : {
+               "file" : "Net/DNS/RR/MG.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::MINFO" : {
+               "file" : "Net/DNS/RR/MINFO.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::MR" : {
+               "file" : "Net/DNS/RR/MR.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::MX" : {
+               "file" : "Net/DNS/RR/MX.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::NAPTR" : {
+               "file" : "Net/DNS/RR/NAPTR.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::NID" : {
+               "file" : "Net/DNS/RR/NID.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::NIMLOC" : {
+               "file" : "Net/DNS/RR/NIMLOC.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::NS" : {
+               "file" : "Net/DNS/RR/NS.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::NSAP" : {
+               "file" : "Net/DNS/RR/NSAP.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::NULL" : {
+               "file" : "Net/DNS/RR/NULL.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::OPT" : {
+               "file" : "Net/DNS/RR/OPT.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::PTR" : {
+               "file" : "Net/DNS/RR/PTR.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::PX" : {
+               "file" : "Net/DNS/RR/PX.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::RP" : {
+               "file" : "Net/DNS/RR/RP.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::RT" : {
+               "file" : "Net/DNS/RR/RT.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::SOA" : {
+               "file" : "Net/DNS/RR/SOA.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::SPF" : {
+               "file" : "Net/DNS/RR/SPF.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::SRV" : {
+               "file" : "Net/DNS/RR/SRV.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::SSHFP" : {
+               "file" : "Net/DNS/RR/SSHFP.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::TKEY" : {
+               "file" : "Net/DNS/RR/TKEY.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::TLSA" : {
+               "file" : "Net/DNS/RR/TLSA.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::RR::TSIG" : {
+               "file" : "Net/DNS/RR/TSIG.pm",
+               "version" : "1090"
+            },
+            "Net::DNS::RR::TXT" : {
+               "file" : "Net/DNS/RR/TXT.pm",
+               "version" : "1079"
+            },
+            "Net::DNS::RR::X25" : {
+               "file" : "Net/DNS/RR/X25.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::Resolver" : {
+               "file" : "Net/DNS/Resolver.pm",
+               "version" : "1088"
+            },
+            "Net::DNS::Resolver::Base" : {
+               "file" : "Net/DNS/Resolver/Base.pm",
+               "version" : "1094"
+            },
+            "Net::DNS::Resolver::MSWin32" : {
+               "file" : "Net/DNS/Resolver/MSWin32.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::Resolver::Recurse" : {
+               "file" : "Net/DNS/Resolver/Recurse.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::Resolver::UNIX" : {
+               "file" : "Net/DNS/Resolver/UNIX.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::Resolver::cygwin" : {
+               "file" : "Net/DNS/Resolver/cygwin.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::Resolver::os2" : {
+               "file" : "Net/DNS/Resolver/os2.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::Text" : {
+               "file" : "Net/DNS/Text.pm",
+               "version" : "1070"
+            },
+            "Net::DNS::Update" : {
+               "file" : "Net/DNS/Update.pm",
+               "version" : "1096"
+            },
+            "Net::DNS::ZoneFile" : {
+               "file" : "Net/DNS/ZoneFile.pm",
+               "version" : "1094"
+            },
+            "Net::DNS::ZoneFile::Generator" : {
+               "file" : "Net/DNS/ZoneFile.pm"
+            },
+            "Net::DNS::ZoneFile::Text" : {
+               "file" : "Net/DNS/ZoneFile.pm"
+            }
+         },
+         "target" : "Net::DNS",
+         "version" : "0.72"
       },
       "Net::HTTP" : {
          "dist" : "Net-HTTP-6.05",
@@ -11682,6 +12323,207 @@
          },
          "target" : "Text::Unidecode",
          "version" : "0.04"
+      },
+      "TimeDate" : {
+         "dist" : "TimeDate-1.20",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "Graham Barr <gbarr@pobox.com>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.48, CPAN::Meta::Converter version 2.120921, CPAN::Meta::Converter version 2.112621",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "TimeDate",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : 0
+                  }
+               },
+               "runtime" : {
+                  "requires" : {}
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "repository" : {
+                  "url" : "http://github.com/gbarr/perl-TimeDate"
+               }
+            },
+            "version" : "1.20"
+         },
+         "name" : "TimeDate",
+         "pathname" : "G/GB/GBARR/TimeDate-1.20.tar.gz",
+         "provides" : {
+            "Date::Format" : {
+               "file" : "Date/Format.pm",
+               "version" : "2.24"
+            },
+            "Date::Format::Generic" : {
+               "file" : "Date/Format.pm"
+            },
+            "Date::Language" : {
+               "file" : "Date/Language.pm",
+               "version" : "1.10"
+            },
+            "Date::Language::Afar" : {
+               "file" : "Date/Language/Afar.pm",
+               "version" : "0.99"
+            },
+            "Date::Language::Amharic" : {
+               "file" : "Date/Language/Amharic.pm",
+               "version" : "1.00"
+            },
+            "Date::Language::Austrian" : {
+               "file" : "Date/Language/Austrian.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Brazilian" : {
+               "file" : "Date/Language/Brazilian.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Chinese" : {
+               "file" : "Date/Language/Chinese.pm",
+               "version" : "1.00"
+            },
+            "Date::Language::Chinese_GB" : {
+               "file" : "Date/Language/Chinese_GB.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Czech" : {
+               "file" : "Date/Language/Czech.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Danish" : {
+               "file" : "Date/Language/Danish.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Dutch" : {
+               "file" : "Date/Language/Dutch.pm",
+               "version" : "1.02"
+            },
+            "Date::Language::English" : {
+               "file" : "Date/Language/English.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Finnish" : {
+               "file" : "Date/Language/Finnish.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::French" : {
+               "file" : "Date/Language/French.pm",
+               "version" : "1.04"
+            },
+            "Date::Language::Gedeo" : {
+               "file" : "Date/Language/Gedeo.pm",
+               "version" : "0.99"
+            },
+            "Date::Language::German" : {
+               "file" : "Date/Language/German.pm",
+               "version" : "1.02"
+            },
+            "Date::Language::Greek" : {
+               "file" : "Date/Language/Greek.pm",
+               "version" : "1.00"
+            },
+            "Date::Language::Hungarian" : {
+               "file" : "Date/Language/Hungarian.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Icelandic" : {
+               "file" : "Date/Language/Icelandic.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Italian" : {
+               "file" : "Date/Language/Italian.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Norwegian" : {
+               "file" : "Date/Language/Norwegian.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Oromo" : {
+               "file" : "Date/Language/Oromo.pm",
+               "version" : "0.99"
+            },
+            "Date::Language::Romanian" : {
+               "file" : "Date/Language/Romanian.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Russian" : {
+               "file" : "Date/Language/Russian.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Russian_cp1251" : {
+               "file" : "Date/Language/Russian_cp1251.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Russian_koi8r" : {
+               "file" : "Date/Language/Russian_koi8r.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Sidama" : {
+               "file" : "Date/Language/Sidama.pm",
+               "version" : "0.99"
+            },
+            "Date::Language::Somali" : {
+               "file" : "Date/Language/Somali.pm",
+               "version" : "0.99"
+            },
+            "Date::Language::Spanish" : {
+               "file" : "Date/Language/Spanish.pm",
+               "version" : "1.00"
+            },
+            "Date::Language::Swedish" : {
+               "file" : "Date/Language/Swedish.pm",
+               "version" : "1.01"
+            },
+            "Date::Language::Tigrinya" : {
+               "file" : "Date/Language/Tigrinya.pm",
+               "version" : "1.00"
+            },
+            "Date::Language::TigrinyaEritrean" : {
+               "file" : "Date/Language/TigrinyaEritrean.pm",
+               "version" : "1.00"
+            },
+            "Date::Language::TigrinyaEthiopian" : {
+               "file" : "Date/Language/TigrinyaEthiopian.pm",
+               "version" : "1.00"
+            },
+            "Date::Language::Turkish" : {
+               "file" : "Date/Language/Turkish.pm",
+               "version" : "1.0"
+            },
+            "Date::Parse" : {
+               "file" : "Date/Parse.pm",
+               "version" : "2.30"
+            },
+            "Time::Zone" : {
+               "file" : "Time/Zone.pm",
+               "version" : "2.24"
+            },
+            "TimeDate" : {}
+         },
+         "target" : "Date::Format",
+         "version" : "1.20"
       },
       "Tree::DAG_Node" : {
          "dist" : "Tree-DAG_Node-1.10",

@@ -3,6 +3,7 @@ use Dancer ':syntax';
 use Dancer::Plugin::DBIC;
 use HTML::FillInForm;
 use Data::Dumper;
+use Validate;
 
 our $VERSION = '0.1';
 
@@ -92,6 +93,25 @@ get '/search' => sub {
 };
 
 # ===== Helper Functions =====
+
+#--- Validate -------------------------------------------------------------  
+sub validate_books {
+   my $params = shift;
+	my (%sql, $error, @error_list, $stmt);
+	
+	($sql{'title'}, $error) = Validate::val_text( 1, 64, $params->{'title'} );
+		if ( $error-> { msg } ) { push @error_list, { "title" => $error->{ msg } }; }	
+	($sql{'author'}, $error) = Validate::val_selected($params->{'author'} );
+		if ( $error-> { msg } ) { push @error_list, { "author" => $error->{ msg } }; }
+
+	for my $key ( keys %sql ) {
+		if (not $sql{$key}) { $sql{$key} = ''; } # Set all undefined variables to avoid warnings.
+	}
+	if (@error_list) {
+      return { 'errors' => \@error_list };
+   }
+	return \%sql;
+}
 
 sub fillinform {
    my $template = shift;

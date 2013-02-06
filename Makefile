@@ -185,10 +185,13 @@ PERL_ARCHIVE       =
 PERL_ARCHIVE_AFTER = 
 
 
-TO_INST_PM = lib/bookstore.pm \
+TO_INST_PM = lib/Validate.pm \
+	lib/bookstore.pm \
 	populate_database.pl
 
-PM_TO_BLIB = lib/bookstore.pm \
+PM_TO_BLIB = lib/Validate.pm \
+	blib/lib/Validate.pm \
+	lib/bookstore.pm \
 	blib/lib/bookstore.pm \
 	populate_database.pl \
 	$(INST_LIB)/populate_database.pl
@@ -874,6 +877,7 @@ ppd :
 
 pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
 	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
+	  lib/Validate.pm blib/lib/Validate.pm \
 	  lib/bookstore.pm blib/lib/bookstore.pm \
 	  populate_database.pl $(INST_LIB)/populate_database.pl 
 	$(NOECHO) $(TOUCH) pm_to_blib
