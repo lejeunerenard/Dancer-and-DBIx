@@ -11,7 +11,7 @@
     !window.jQuery && document.write('<script type="text/javascript" src="<% request.uri_base %>/javascripts/jquery.js"><\/script>')
 /* ]]> */</script>
 <script src="<% request.uri_base %>/javascripts/form/jquery.form.js" type="text/javascript"></script>
-<script src="<% request.uri_base %>/javascripts/form_functions.js" type="text/javascript"></script>
+<script src="<% request.uri_base %>/javascripts/Form-Functions/form_functions.js" type="text/javascript"></script>
 
 </head>
 <body>

@@ -8,7 +8,6 @@ use Encode;
 use Encode::Guess;
 
 sub val_alpha {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	if (!$value && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -27,7 +26,6 @@ sub val_alpha {
 }
 
 sub val_number {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	if ((!defined $value or $value eq '') && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -45,7 +43,6 @@ sub val_number {
 }
 
 sub val_float {   #  Validation that requires just a number
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	if ($value eq '' && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -60,7 +57,6 @@ sub val_float {   #  Validation that requires just a number
 
 #--- Include 0
 sub val_whole {
-	my $self = shift;
 	my ($mand, $value) = @_;
 
 	if ($value != 0 && !$value && $mand) {
@@ -78,7 +74,6 @@ sub is_whole ($) {
 }
 
 sub val_int {
-	my $self = shift;
 	my ($mand, $value) = @_;
 	if ($value != 0 && !$value && $mand) {
 		return (undef, { msg => 'cannot be blank.' });
@@ -90,7 +85,6 @@ sub val_int {
 }
 
 sub val_alphanum {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	if (!$value && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -109,7 +103,6 @@ sub val_alphanum {
 }
 
 sub val_alphanumspc {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	if (!$value && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -128,7 +121,6 @@ sub val_alphanumspc {
 }
 
 sub val_input {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	if (!$value && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -147,7 +139,6 @@ sub val_input {
 }
 
 sub val_text {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 
 	# To ensure the text is correctly encoded etc. SZ 7/12/12
@@ -174,7 +165,6 @@ sub val_text {
 }
 
 sub val_text_by_words {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	$value =~ s/  / /g;
 	my @words = split(/ /,$value);
@@ -191,7 +181,6 @@ sub val_text_by_words {
 }
 
 sub val_html {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	if (!$value && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -205,7 +194,6 @@ sub val_html {
 }
 
 sub val_email { 
-	my $self = shift;
 	my ($mand, $value) = @_;
 	if ( !Email::Valid->address($value) && $mand ) { 
 		return ( undef, { msg => 'address is blank or not valid' }	);
@@ -217,7 +205,6 @@ sub val_email {
 }
 
 sub val_selected {
-	my $self = shift;
 	my ($value) = @_;
 	if (!$value) {
 		return (undef, { msg => 'must be selected' });
@@ -227,7 +214,6 @@ sub val_selected {
 }
 
 sub val_filename {
-	my $self = shift;
 	my ($mand, $endings, $value) = @_;
 	
 	if (!$endings) { $endings = "jpg|jpeg|png|gif|flv|swf|css|html|htm|js|xml|xls|docx|pages|doc|pdf"; }
@@ -244,7 +230,6 @@ sub val_filename {
 }
 
 sub val_exact_filename {
-	my $self = shift;
 	my ($mand, $exactname, $value) = @_;
 		
 	if (!$value && $mand) {
@@ -257,7 +242,6 @@ sub val_exact_filename {
 }
 
 sub val_date {
-	my $self = shift;
 	my ($mand, $value) = @_;
 	if (!$value && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -269,7 +253,6 @@ sub val_date {
 }
 
 sub val_time {
-	my $self = shift;
 	my ($mand, $value) = @_;
 	if (!$value && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -281,7 +264,6 @@ sub val_time {
 }
 
 sub val_wordwash {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	if (!$value && $mand) {
 		return (undef, { msg => 'cannot be blank' });
@@ -294,7 +276,6 @@ sub val_wordwash {
 }
 
 sub val_word {
-	my $self = shift;
 	my ($mand, $len, $value) = @_;
 	$value =~ s/’/&rsquo;/g;
 	$value =~ s/•/&bull;/g;
@@ -335,7 +316,6 @@ sub val_word {
 }
 
 sub val_editor {
-	my $self = shift;
 	my ($value) = @_;
 	
    if ( $value =~ /<m:|mso\-|<o:|<w:|Word\.Document/ ) {

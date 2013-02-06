@@ -1,11 +1,12 @@
-<form action="/books" method="">
+<div id="msgs"></div>
+<form id="book_form" action="/books" method="">
    <input type="hidden" name="id" value="" />
    <p>
       <label for="title">Title</label>
       <input type="text" name="title" value="" />
    </p>
    <p>
-      <label for="Author">Author</label>
+      <label for="author">Author</label>
       <select name="author">
          <option value="">Select one...</option>
          <% IF authors.size %>
@@ -23,16 +24,24 @@
 </form>
 <script type="text/javascript">
    $(function() {
-      $('form').submit(function(e) {
-         $.ajax({
-            url: '/books',
-            type: "<% IF book.id %>PUT<% ELSE %>POST<% END %>",
-            data: $(this).serialize(),
-            success: function(results) {
-               console.log(results);
-            }
-         });
-         return false;
+      $('form').ajaxForm({
+         url: '/books',
+         type: "<% IF book.id %>PUT<% ELSE %>POST<% END %>",
+         datatype: 'json',
+         beforeSubmit: function() {
+            normalize_labels($('form'));
+         },
+         //data: $(this).serialize(),
+         success: function(result) {
+            console.log(result);
+            parse_results({
+               result: result,
+               form: 'book_form',
+               msgdiv: 'msgs',
+               success: function(result) {
+               }
+            });
+         }
       });
    });
 </script>

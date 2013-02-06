@@ -8,6 +8,10 @@ use Validate;
 our $VERSION = '0.1';
 
 my %tmpl_params;
+hook 'before' => sub {
+   # Clear tmpl Params;
+   %tmpl_params = {};
+};
 
 # ----- Generate URIs -----
 hook 'before_template_render' => sub {
@@ -38,20 +42,24 @@ get '/books/?:id?' => sub {
 
 # Create and Update
 any ['post', 'put'] => '/books' => sub {
+   set serializer => 'JSON';
+
    my %params = params;
-   #if (not $params{author}) { delete $params{'author'} }
+   my $success;
+
    my $msg = validate_books( \%params );
    if ($msg->{errors}) {
-      set serializer => 'JSON';
       return $msg;
    }
    if ( request->method() eq "POST" ) {
       #delete $params{'id'};
       resultset('Book')->create($msg);
+      $success = "Book added Successfully";
    } else {
       resultset('Book')->find(param 'id')->update($msg);
+      $success = "Book updated Successfully";
    }
-	template 'book_add', \%tmpl_params;
+   return { success => [ { success => $success } ] };
 };
 # Delete
 get '/books/delete/:id' => sub {
