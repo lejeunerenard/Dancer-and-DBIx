@@ -16,4 +16,4 @@
   <% ELSE %>
     <p>No result</p>
   <% END %>
-   <a href="<% add_book_uri %>">Add a Book</a>
+   <a href="<% add_book_uri %>">Add a Book</a>&nbsp;<a href="<% dashboard %>">Dasbhoard</a>

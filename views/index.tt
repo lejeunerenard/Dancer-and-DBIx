@@ -7,6 +7,13 @@
               </p>
             </li>
             <li>
+              <h2><a href="<% list_authors_uri %>">List All Authors</a></h2>
+
+              <p>
+               How many of these have you read? I've read them all.
+              </p>
+            </li>
+            <li>
               <h2><a href="<% search_books_uri %>">Search</a></h2>
 
               <p>

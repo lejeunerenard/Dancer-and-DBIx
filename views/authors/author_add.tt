@@ -1,0 +1,40 @@
+<div id="msgs"></div>
+<form id="author_form" action="/authors" method="">
+   <input type="hidden" name="id" value="" />
+   <p>
+      <label for="firstname">First name</label>
+      <input type="text" name="firstname" value="" />
+   </p>
+   <p>
+      <label for="lastname">Last name</label>
+      <input type="text" name="lastname" value="" />
+   </p>
+   <p>
+      <input type="submit" value="<% IF author.id %>Update<% ELSE %>Save<% END %>" />
+      <% IF author.id %><a href="/authors/delete/<% author.id %>">Delete</a><% END %>
+      <a href="<% list_authors_uri %>">Back to List</a>
+   </p>
+</form>
+<script type="text/javascript">
+   $(function() {
+      $('form').ajaxForm({
+         url: '/authors',
+         type: "<% IF author.id %>PUT<% ELSE %>POST<% END %>",
+         datatype: 'json',
+         beforeSubmit: function() {
+            normalize_labels($('form'));
+         },
+         //data: $(this).serialize(),
+         success: function(result) {
+            console.log(result);
+            parse_results({
+               result: result,
+               form: 'author_form',
+               msgdiv: 'msgs',
+               success: function(result) {
+               }
+            });
+         }
+      });
+   });
+</script>

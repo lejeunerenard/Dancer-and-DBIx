@@ -1,0 +1,19 @@
+  <% IF authors.size %>
+    <table>
+      <tr>
+         <th></th>
+         <th>First name</th>
+         <th>Last name</th>
+      </tr>
+    <% FOREACH author IN authors %>
+      <tr>
+         <td><a href="/authors/<% author.id %>">View</a> <a href="/authors/edit/<% author.id %>">Edit</a></td>
+         <td><% author.firstname %></td>
+         <td><% author.lastname %></td>
+      </tr>
+    <% END %>
+    </table>
+  <% ELSE %>
+    <p>No result</p>
+  <% END %>
+   <a href="<% add_author_uri %>">Add an Author</a>&nbsp;<a href="<% dashboard %>">Dasbhoard</a>

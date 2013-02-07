@@ -1,0 +1,9 @@
+   <p>
+      <label for="firstname">First name:</label>
+      <% author.firstname %>
+   </p>
+   <p>
+      <label for="lastname">Last name:</label>
+      <% author.lastname %>
+   </p>
+   <a href="<% list_authors_uri %>">Back to List</a>

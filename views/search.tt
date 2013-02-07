@@ -1,5 +1,5 @@
 <p>
-<form action="/search">
+<form action="<% search_books_uri %>">
 Search query: <input type="text" name="query" />
 </form>
 </p>
@@ -22,3 +22,4 @@ Search query: <input type="text" name="query" />
     No result
   <% END %>
 <% END %>
+<a href="<% dashboard %>">Dashboard</a>
