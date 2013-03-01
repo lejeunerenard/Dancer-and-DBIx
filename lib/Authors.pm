@@ -4,6 +4,12 @@ use Dancer::Plugin::DBIC;
 use HTML::FillInForm;
 use Data::Dumper;
 use Validate;
+use bookstore::Helpers;
+
+# Setup Models' "aliases"
+sub Books { model('Book'); }
+sub Authors { model('Author'); }
+
 
 prefix '/authors' => sub {
 
@@ -18,10 +24,10 @@ hook 'before' => sub {
 # Read
 get '/?:id?' => sub {
    if ( param 'id' ) {
-      $tmpl_params{author} = resultset('Author')->find(param 'id');   # \@{[ ]} will force a list context
+      $tmpl_params{author} = Author->find(param 'id');   # \@{[ ]} will force a list context
       template 'authors/author_single', \%tmpl_params;
    } else {
-      $tmpl_params{authors} = \@{[resultset('Author')->all]};   # \@{[ ]} will force a list context
+      $tmpl_params{authors} = \@{[Author->all]};   # \@{[ ]} will force a list context
       template 'authors/authors_list', \%tmpl_params;
    }
 };
@@ -39,21 +45,21 @@ any ['post', 'put'] => '/?' => sub {
    }
    if ( request->method() eq "POST" ) {
       #delete $params{'id'};
-      resultset('Author')->create($msg);
+      Author->create($msg);
       $success = "Author added Successfully";
    } else {
-      resultset('Author')->find(param 'id')->update($msg);
+      Author->find(param 'id')->update($msg);
       $success = "Author updated Successfully";
    }
    return { success => [ { success => $success } ] };
 };
 # Delete
 get '/delete/:id' => sub {
-   resultset('Author')->find(param 'id')->delete();
+   Author->find(param 'id')->delete();
    redirect '/authors/';
 };
 del '/:id' => sub {
-   resultset('Author')->find(param 'id')->delete();
+   Author->find(param 'id')->delete();
    redirect '/authors/';
 };
 
@@ -64,9 +70,9 @@ get '/add/?' => sub {
 };
 
 get '/edit/:id' => sub {
-	$tmpl_params{books} = \@{[resultset('Book')->all]};   # \@{[ ]} will force a list context
-   if (param 'id') { $tmpl_params{author} = resultset('Author')->find(param 'id'); }
-   %tmpl_params = (%tmpl_params, %{resultset('Author')->search({ id => param 'id' }, {
+	$tmpl_params{books} = \@{[Books->all]};   # \@{[ ]} will force a list context
+   if (param 'id') { $tmpl_params{author} = Authors->find(param 'id'); }
+   %tmpl_params = (%tmpl_params, %{Author->search({ id => param 'id' }, {
       result_class => 'DBIx::Class::ResultClass::HashRefInflator',
    })->next});
 	fillinform('authors/author_add', \%tmpl_params);
@@ -95,10 +101,4 @@ sub validate_authors {
 	return \%sql;
 }
 
-# ===== Helper Functions =====
-sub fillinform {
-   my $template = shift;
-   my $fifvalues = shift;
-   my $html = template $template, $fifvalues;
-   return HTML::FillInForm->fill( \$html, $fifvalues );
-}
+1;

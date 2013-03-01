@@ -4,8 +4,13 @@ use Dancer::Plugin::DBIC;
 use HTML::FillInForm;
 use Data::Dumper;
 use Validate;
+use bookstore::Helpers;
 
 our $VERSION = '0.1';
+
+# Setup Models' "aliases"
+sub Book { model('Book'); }
+sub Author { model('Author'); }
 
 my %tmpl_params;
 hook 'before' => sub {
@@ -49,7 +54,7 @@ sub _perform_search {
 	my ($query) = @_;
 	my @results;
 	# search in authors
-	my @authors = resultset('Author')->search({
+	my @authors = Author->search({
 		-or => [
 			firstname => { like => "%$query%" },
 			firstname => { like => "%$query%" },
@@ -62,7 +67,7 @@ sub _perform_search {
 	} @authors;
 	my %book_results;
 	# search in books
-	my @books = resultset('Book')->search({
+	my @books = Book->search({
 		title => { like => "%$query%" },
 	});
 	foreach my $book (@books) {
